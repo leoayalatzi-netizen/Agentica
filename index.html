@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><title>ARENA · Agentes autónomos de cálculo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="css/style.css"></head>
+<body data-d="math">
+<header><div class="logo">⚡ ARENA <small>agentes autónomos de cálculo</small></div>
+<nav id="tabs"><button data-d="math">∑ Matemáticas</button><button data-d="phys">⚛ Física</button><button data-d="aero">🚀 Aeroespacial</button></nav>
+<button id="th" class="ic" title="Tema claro/oscuro">◐</button></header>
+<main>
+<section class="col">
+ <div class="card"><h2>Problema</h2>
+  <div class="g2"><div><label>Preset</label><select id="pre"></select></div><div><label>Tipo</label><select id="ty"></select></div></div>
+  <label id="el">Expresión</label><input id="ex" autocapitalize="off" spellcheck="false">
+  <div class="g4"><div><label id="l1"></label><input id="p1"></div><div><label id="l2"></label><input id="p2"></div><div><label id="l3"></label><input id="p3"></div><div><label id="l4"></label><input id="p4"></div></div>
+  <label>Modo de los agentes</label><select id="md"><option value="auto">Auto · cada agente elige según su historial</option><option value="coop">Todos cooperativos 🤝</option><option value="solo">Todos solitarios 🐺</option></select>
+  <div class="g3"><button id="go">Lanzar agentes</button><button class="s" id="st">Parar</button><button class="s" id="rs">Reiniciar IQ</button></div>
+  <p class="m">Usa * explícito, ^ potencia, pi, e, sin cos tan exp ln log sqrt abs… Series: variable n, b puede ser inf.</p></div>
+ <div class="card"><h2>Agentes <span class="m" id="tk"></span></h2><div id="ags"></div></div>
+ <div class="card"><h2>Ranking global</h2><div id="rank"></div></div>
+</section>
+<section class="col">
+ <div class="card"><h2>Visualización</h2><div class="m" id="ptitle">Lanza un problema para ver la gráfica.</div><canvas id="plot"></canvas><div id="legend"></div></div>
+ <div class="card sol" id="sol" style="display:none"></div>
+ <div class="card"><h2>Convergencia de los agentes</h2><div class="m">Error relativo (log₁₀) por paso: quien baja antes, gana.</div><canvas id="conv" class="small"></canvas></div>
+ <div class="card" id="calc" style="display:none"><h2>🛰 Calculadora orbital</h2>
+  <div class="g3"><div><label>Cuerpo</label><select id="cb"><option>Tierra</option><option>Luna</option><option>Marte</option></select></div><div><label>Altitud inicial (km)</label><input id="c1" type="number" value="400"></div><div><label>Altitud final (km)</label><input id="c2" type="number" value="35786"></div></div>
+  <div class="g3"><div><label>Isp (s)</label><input id="ci" type="number" value="350"></div><div><label>Masa inicial (kg)</label><input id="cm" type="number" value="100000"></div><div><label>Masa final (kg)</label><input id="cf" type="number" value="20000"></div></div>
+  <div id="cout" class="m" style="margin-top:8px"></div></div>
+ <div class="card"><h2>Concepto</h2><div id="concept"></div></div>
+</section>
+</main>
+<script src="js/arena.js"></script><script src="js/agents-plus.js"></script><script src="js/plot.js"></script><script src="js/ui.js"></script>
+</body></html>
